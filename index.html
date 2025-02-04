@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Take home hands-on</title>
     <style>
-        *{
-            padding: 0.5%;
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
             font-family: sans-serif;
             background-color: #ac746c;
         }
 
-        .secondsec {
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
             display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #7f1f0e;
         }
 
         #mylogo {
@@ -23,146 +32,163 @@
             height: 80px;
         }
 
-        nav{
+        .logo{
+            background-color: #7f1f0e;
+        }
+
+        .navs {
             display: flex;
-            justify-content: space-between;
-            transition: 2s;
-
+            gap: 20px;
+            background-color: #7f1f0e;
         }
 
-        nav a{
+        .navs a {
             text-decoration: none;
-            color: #3d0a05;
-            justify-content: space-between;
-            text-align: right;
-            font-size: 30px;
-            padding-top: 30px;
+            color: #dac1b1;
+            font-size: 25px;
+            background-color: #7f1f0e;
         }
 
-        nav a:hover{
-            background-color: #dac1b1;
+        nav a:hover {
+            color: #7f1f0e;
+            background-color: #ac746c;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
 
-        .mainbox{
+        .secondsec {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .mainbox {
             display: flex;
             justify-content: space-evenly;
+            gap: 5px;
+            flex-wrap: wrap;
+            max-width: 1000px;
             width: 100%;
-            align-items: center;
+            margin: 0 20px;
         }
 
-        .myself{
-            width: 450px;
+        .myself, .hobby, .crush {
+            width: 300px;
             display: flex;
             flex-direction: column;
-            height: 700px;
             background-color: #7f1f0e;
+            padding: 20px;
+            border-radius: 10px;
         }
 
-        .myself img{
-            width: 400px;
-            height: 500px;
-            padding-top: 20px;
-            background-color: #7f1f0e;
+        .myself img, .hobby img, .crush img {
+            width: 100%;
+            height: auto;
             border-radius: 5rem 0 5rem 0;
-            padding-left: 25px;
-        }
-
-        .myself h1{
-            background-color: #7f1f0e;
-            font-family: 'garamond' serif;
-            text-align: center;
-            color: #dac1b1;
-        }
-
-        .myself p{
-            background-color: #7f1f0e;
-            font-family: 'verdana';
-            font-size: 18px;
-            text-align: center;
-            color: #dac1b1;
-        }
-
-        .hobby{
-            width: 450px;
-            display: flex;
-            flex-direction: column;
-            background-color: #7f1f0e;
-            height: 700px;
-        }
-
-        .hobby img{
-            width: 400px;
-            height: 400px;
-            padding-top: 20px;
-            background-color: #7f1f0e;
-            padding-left: 25px;
-            border-radius: 5rem 0 5rem 0;
-        }
-
-        .hobby h1{
-            background-color: #7f1f0e;
-            font-family: 'garamond' serif;
-            text-align: center;
-            color: #dac1b1;
-        }
-
-        .hobby p{
-            background-color: #7f1f0e;
-            font-family: 'verdana';
-            font-size: 18px;
-            text-align: center;
-            color: #dac1b1;
-        }
-
-        .crush{
-            width: 450px;
-            display: flex;
-            flex-direction: column;
-            background-color: #7f1f0e;
-            height: 700px;
+            margin-bottom: 15px;
         }
 
         .crush img{
-            width: 400px;
-            height: 500px;
-            padding-top: 20px;
-            background-color: #7f1f0e;
-            padding-left: 25px;
-            border-radius: 5rem 0 5rem 0;
+            height: 300px;
         }
 
-        .crush h1{
-            background-color: #7f1f0e;
-            font-family: 'garamond' serif;
+        .myself h1, .hobby h1, .crush h1 {
             text-align: center;
             color: #dac1b1;
+            font-family: 'Garamond', serif;
+            margin-bottom: 10px;
+            background-color: #7f1f0e;
         }
 
-        .crush p{
-            background-color: #7f1f0e;
-            font-family: 'verdana';
-            font-size: 18px;
+        .myself p, .hobby p, .crush p {
             text-align: center;
             color: #dac1b1;
+            font-family: 'Verdana', sans-serif;
+            font-size: 16px;
+            background-color: #7f1f0e;
         }
 
         @media screen and (max-width: 1024px) {
-            .secondsec{
-                overflow-x: auto;
-                scroll-snap-type: mandatory;
+            .mainbox {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+            }
+
+            .myself, .hobby, .crush {
+                width: 300px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .mainbox {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 5px;
+                flex-wrap: wrap;
+                max-width: 1000px;
+                width: 100%;
+                margin: 0 20px;
+            }
+
+            .navs {
+                flex-direction: row;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .navs a{
+                font-size: 18px;
+            }
+
+            .myself, .hobby, .crush {
+                width: 40%;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .mainbox {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .myself, .hobby, .crush {
+                width: 70%;
+                padding: 15px
+            }
+
+            .navs a {
+                font-size: 16px;
             }
         }
 
     </style>
+
+<!-- ---------------------- -->
+<!-- Sir, hindi ko po magawa yung responsive nav bar na hamburger menu huhuh, sorry po. papracticin ko pa po -->
+<!-- ---------------------- -->
+
 </head>
 <body>
 
     <nav>
-        <img id="mylogo" src="logo.jpg" alt="logo">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Contacts</a>
-        <a href="">Works</a>
+        <div class="logo">
+            <img id="mylogo" src="logo.jpg" alt="logo">
+        </div>
+
+        <div class="navs">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contacts</a>
+            <a href="">Works</a>
+        </div>
     </nav>
 
     <div class="secondsec">
@@ -170,13 +196,13 @@
             <div class="myself">
                 <img src="mypic.jpg" alt="my picture">
                 <h1>Loren Reformado</h1>
-                <p>Hello, hi, hello, hi. My name is nxdhsic nncoiwafcsczet4h</p>
+                <p>Hello, hi, hello, hi. I'm 19 and I'm a gorl.</p>
             </div>
-    
+            
             <div class="hobby">
                 <img src="hobby.jpg" alt="my hobby">
                 <h1>Wattpad</h1>
-                <p>Reading had always become my comfort zone ever since i was 8th grade and chuchu</p>
+                <p>Reading has been my no. 1- tong tong tong love radio! ang sarap ng no. 1!</p>
             </div>
     
             <div class="crush">
